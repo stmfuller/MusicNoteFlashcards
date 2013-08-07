@@ -3,43 +3,19 @@ package com.mattfuller.musicnoteflashcards;
 import java.util.Random;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.content.Context;
+import android.content.DialogInterface;
+
 
 public class Game extends Activity {
 
-	public enum Clef
-	{
-		TREBLE, BASS, ALL;	
-	}
-	public enum Notes
-	{
-		c(0), cS(1), d(2), dS(3), e(4), f(5), fS(6),g(7), gS(8), a(9), aS(10), b(11);
-		
-		private final int num;
-		Notes (int num)
-		{
-			this.num = num;
-		}
-		public int getValue()
-		{
-			return num;
-		}
-		
-		public static Notes getNote(int n)
-		{
-			for (Notes note : values())
-			{
-				if (note.num == n)
-					return note;
-			}
-			throw new IllegalArgumentException(String.valueOf(n));
-		}
-		
-		
-	}
+	
+	
 	
 	int questions[]; 
 	Clef clef;
@@ -68,7 +44,9 @@ public class Game extends Activity {
 		//will allow the user to set this up.
 		questions = new int[10];
 		clef = Clef.ALL;
-		count = right = wrong = 0;
+		
+
+		
 		
 		//seed the random.
 		rand = new Random();
@@ -86,8 +64,11 @@ public class Game extends Activity {
 			//be removed so that starting students can
 			//learn easier.
 			questions[i] = rand.nextInt(12);
+			
 		}
 		
+		//initialize the score count.
+		count = right = wrong = 0;
 		updateNote();
 	}
 	
@@ -139,6 +120,33 @@ public class Game extends Activity {
 	
 	private void endGame()
 	{
-		test.setText("done");
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage("Again?").setTitle("Game Over");
+		
+		//setup another round. 
+		builder.setPositiveButton("Play Again", new DialogInterface.OnClickListener()
+			{
+				@Override
+				public void onClick(DialogInterface dialog, int id)
+				{
+					gameStartUp();
+				}
+			});
+		
+		
+		//set the quit button
+		builder.setNegativeButton("Quit", new DialogInterface.OnClickListener()
+		{
+			@Override
+			public void onClick(DialogInterface dialog, int id)
+			{
+				gameStartUp();
+			}
+		});
+		
+		
+		//create the alertDialog
+		AlertDialog dialog = builder.create();
+		dialog.show();
 	}
 }

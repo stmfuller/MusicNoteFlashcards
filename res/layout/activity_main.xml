@@ -62,132 +62,148 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_gravity="bottom"
         android:gravity="top" >
 
         <ImageView
             android:id="@+id/imageView1"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="match_parent"
             android:layout_weight="0.03"
             android:scaleType="fitXY"
             android:src="@drawable/keyboard" />
 
-        <Button
-            android:id="@+id/c"
-            android:layout_width="43dp"
-            android:layout_height="73dp"
-            android:layout_alignBottom="@+id/imageView1"
-            android:layout_alignParentLeft="true"
-            android:tag="c"
-            android:onClick="buttonHandler" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/d"
-            android:layout_width="43dp"
-            android:layout_height="73dp"
-            android:layout_alignBottom="@+id/imageView1"
-            android:layout_toRightOf="@+id/c"
-            android:tag="d"
-            android:onClick="buttonHandler" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
 
-        <Button
-            android:id="@+id/e"
-            android:layout_width="43dp"
-            android:layout_height="73dp"
-            android:layout_alignBottom="@+id/imageView1"
-            android:layout_toRightOf="@+id/d"
-            android:tag="e"
-            android:onClick="buttonHandler" />
+                <Button
+                    android:id="@+id/cS"
+                    android:layout_width="35dp"
+                    android:layout_height="116dp"
+                    android:layout_marginLeft="25dp"
+                    android:minHeight="46dp"
+                    android:onClick="buttonHandler"
+                    android:tag="cS" />
 
-        <Button
-            android:id="@+id/f"
-            android:layout_width="43dp"
-            android:layout_height="73dp"
-            android:layout_alignBaseline="@+id/e"
-            android:layout_alignBottom="@+id/e"
-            android:layout_centerHorizontal="true"
-            android:tag="f"
-            android:onClick="buttonHandler" />
+                <Button
+                    android:id="@+id/fS"
+                    android:layout_width="35dp"
+                    android:layout_height="120dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="42dp"
+                    android:layout_toRightOf="@+id/dS"
+                    android:onClick="buttonHandler"
+                    android:tag="fS" />
 
-        <Button
-            android:id="@+id/g"
-            android:layout_width="43dp"
-            android:layout_height="73dp"
-            android:layout_alignBottom="@+id/imageView1"
-            android:layout_toRightOf="@+id/f"
-            android:tag="g"
-            android:onClick="buttonHandler" />
+                <Button
+                    android:id="@+id/gS"
+                    android:layout_width="35dp"
+                    android:layout_height="120dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toRightOf="@+id/fS"
+                    android:onClick="buttonHandler"
+                    android:tag="gS" />
 
-        <Button
-            android:id="@+id/a"
-            android:layout_width="43dp"
-            android:layout_height="73dp"
-            android:layout_alignBaseline="@+id/g"
-            android:layout_alignBottom="@+id/g"
-            android:layout_toRightOf="@+id/g"
-            android:tag="a"
-            android:onClick="buttonHandler" />
+                <Button
+                    android:id="@+id/dS"
+                    android:layout_width="35dp"
+                    android:layout_height="120dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/cS"
+                    android:onClick="buttonHandler"
+                    android:paddingLeft="40dp"
+                    android:tag="dS" />
 
-        <Button
-            android:id="@+id/b"
-            android:layout_width="43dp"
-            android:layout_height="73dp"
-            android:layout_alignBaseline="@+id/a"
-            android:layout_alignBottom="@+id/a"
-            android:layout_alignParentRight="true"
-            android:tag="b"
-            android:onClick="buttonHandler" />
+                <Button
+                    android:id="@+id/aS"
+                    android:layout_width="35dp"
+                    android:layout_height="120dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/gS"
+                    android:onClick="buttonHandler"
+                    android:tag="aS" />
+            </RelativeLayout>
 
-        <Button
-            android:id="@+id/cS"
-            android:layout_width="35dp"
-            android:layout_height="120dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="25dp"
-            android:tag="cS"
-            android:onClick="buttonHandler" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2" >
 
-        <Button
-            android:id="@+id/dS"
-            android:layout_width="35dp"
-            android:layout_height="120dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="8dp"
-            android:layout_toRightOf="@+id/cS"
-            android:onClick="buttonHandler"
-            android:tag="dS"
-            android:paddingLeft="35dp" />
+                <Button
+                    android:id="@+id/c"
+                    android:layout_width="43dp"
+                    android:layout_height="match_parent"
+                    android:onClick="buttonHandler"
+                    android:tag="c" />
 
-        <Button
-            android:id="@+id/fS"
-            android:layout_width="35dp"
-            android:layout_height="120dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="16dp"
-            android:layout_toRightOf="@+id/e"
-            android:tag="fS"
-            android:onClick="buttonHandler" />
+                <Button
+                    android:id="@+id/d"
+                    android:layout_width="43dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="42dp"
+                    android:onClick="buttonHandler"
+                    android:tag="d" />
 
-        <Button
-            android:id="@+id/gS"
-            android:layout_width="35dp"
-            android:layout_height="120dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="8dp"
-            android:layout_toRightOf="@+id/fS"
-            android:tag="gS"
-            android:onClick="buttonHandler" />
+                <Button
+                    android:id="@+id/e"
+                    android:layout_width="43dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/d"
+                    android:onClick="buttonHandler"
+                    android:tag="e" />
 
-        <Button
-            android:id="@+id/aS"
-            android:layout_width="35dp"
-            android:layout_height="120dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="5dp"
-            android:layout_toRightOf="@+id/gS"
-            android:tag="aS"
-            android:onClick="buttonHandler" />
+                <Button
+                    android:id="@+id/f"
+                    android:layout_width="43dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:onClick="buttonHandler"
+                    android:tag="f" />
+
+                <Button
+                    android:id="@+id/b"
+                    android:layout_width="43dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:onClick="buttonHandler"
+                    android:tag="b" />
+
+                <Button
+                    android:id="@+id/a"
+                    android:layout_width="43dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_toLeftOf="@+id/b"
+                    android:onClick="buttonHandler"
+                    android:tag="a" />
+
+                <Button
+                    android:id="@+id/g"
+                    android:layout_width="43dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_toLeftOf="@+id/a"
+                    android:onClick="buttonHandler"
+                    android:tag="g" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
 
     </RelativeLayout>
 

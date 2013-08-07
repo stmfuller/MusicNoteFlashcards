@@ -2,9 +2,7 @@ package com.mattfuller.musicnoteflashcards;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.GestureDetector;
 import android.view.Menu;
-import android.view.MotionEvent;
 import android.view.WindowManager;
 
 public class MainActivity extends Activity {
